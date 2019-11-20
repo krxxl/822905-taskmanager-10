@@ -1,3 +1,5 @@
+'use strict';
+
 const TASK_COUNT = 3;
 
 const createSiteMenuTamplate = () => {
@@ -28,8 +30,7 @@ const createSiteMenuTamplate = () => {
   <label for="control__statistic" class="control__label"
     >STATISTICS</label
   >
-</section>`)
-
+</section>`);
 };
 
 const createFilterTamplate = () => {
@@ -100,7 +101,7 @@ const createFilterTamplate = () => {
   <label for="filter__archive" class="filter__label"
     >Archive <span class="filter__archive-count">115</span></label
   >
-</section>`)
+</section>`);
 };
 
 const createBoardTamplate = () => {
@@ -112,7 +113,7 @@ const createBoardTamplate = () => {
   </div>
 
   <div class="board__tasks"></div>
-</section>`)
+</section>`);
 };
 
 const createTaskTamplate = () => {
@@ -180,7 +181,7 @@ const createTaskTamplate = () => {
       </div>
     </div>
   </div>
-</article>`)
+</article>`);
 };
 
 const createTaskEditTamplate = () => {
@@ -438,15 +439,15 @@ const createTaskEditTamplate = () => {
       </div>
     </div>
   </form>
-</article>`)
+</article>`);
 };
 
 const createLoadMoreButtonTamplate = () => {
-  return (`<button class="load-more" type="button">load more</button>`)
+  return (`<button class="load-more" type="button">load more</button>`);
 };
 
 const render = (container, template, place) => {
-  container.insertAdjacentHTML(place, template)
+  container.insertAdjacentHTML(place, template);
 };
 
 const siteMainElement = document.querySelector(`.main`);
@@ -460,7 +461,7 @@ const taskListElement = siteMainElement.querySelector(`.board__tasks`);
 render(taskListElement, createTaskEditTamplate(), `beforeend`);
 
 new Array(TASK_COUNT).fill(``).forEach(
-  () => render(taskListElement, createTaskTamplate(), `beforeend`)
+    () => render(taskListElement, createTaskTamplate(), `beforeend`)
 );
 
 const boardElement = siteMainElement.querySelector(`.board`);
